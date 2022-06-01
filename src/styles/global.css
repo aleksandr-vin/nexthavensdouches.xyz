@@ -16,6 +16,12 @@ img {
     top: 00px;
   }
 
+  #stad {
+    right: -100px;
+    font-size: 6vw;
+    top: 250px;
+  }
+
   #location {
     font-size: 2vw;
   }
@@ -37,6 +43,12 @@ img {
   #place {
     font-size: 8vw;
     top: 10px;
+  }
+
+  #stad {
+    left: -20px;
+    font-size: 6vw;
+    top: 120px;
   }
 
   #location {
@@ -62,6 +74,15 @@ img {
   color: rgb(255, 67, 255);
   font-weight: bold;
   left: 70px;
+}
+
+#stad {
+  z-index: 100;
+  position: absolute;
+  color: rgb(45, 150, 248);
+  font-weight: bold;
+  opacity: 70%;
+  transform: rotate(-90deg);
 }
 
 #location {

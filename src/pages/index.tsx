@@ -14,35 +14,136 @@ export default function Home() {
     {
       img: (
         <StaticImage
-          src={"../images/IMG_2465.jpg"}
-          alt="A douche at Compagnieshaven"
+          src={"../images/IMG_2468.jpg"}
+          alt="A douche at Compagnieshaven Enkhuizen"
         />
       ),
       latitude: "52° 42’ 11,022” N",
       longitude: "005° 17’ 53,67” E",
       place: "Compagnieshaven",
+      stad: "Enkhuizen",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2464.jpg"}
+          alt="A douche at Compagnieshaven Enkhuizen"
+        />
+      ),
+      latitude: "52° 42’ 11,022” N",
+      longitude: "005° 17’ 53,67” E",
+      place: "Compagnieshaven",
+      stad: "Enkhuizen",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2465.jpg"}
+          alt="A douche at Compagnieshaven Enkhuizen"
+        />
+      ),
+      latitude: "52° 42’ 11,022” N",
+      longitude: "005° 17’ 53,67” E",
+      place: "Compagnieshaven",
+      stad: "Enkhuizen",
     },
     {
       img: (
         <StaticImage
           src={"../images/IMG_2467.jpg"}
-          alt="A douche at Compagnieshaven"
+          alt="A douche at Compagnieshaven Enkhuizen"
         />
       ),
       latitude: "52° 42’ 11,022” N",
       longitude: "005° 17’ 53,67” E",
       place: "Compagnieshaven",
+      stad: "Enkhuizen",
     },
     {
       img: (
         <StaticImage
           src={"../images/IMG_2132.jpg"}
-          alt="A douche at Haven Makkum"
+          alt="A douche at Vissershaven Makkum"
         />
       ),
       latitude: "53° 03’ 12,47” N",
       longitude: "005° 24’ 11,19” E",
-      place: "Haven Makkum",
+      place: "Vissershaven",
+      stad: "Makkum",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2129.jpg"}
+          alt="A douche at Vissershaven Makkum"
+        />
+      ),
+      latitude: "53° 03’ 12,47” N",
+      longitude: "005° 24’ 11,19” E",
+      place: "Vissershaven",
+      stad: "Makkum",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2166.jpg"}
+          alt="A douche at Buitenhaven Den Oever"
+        />
+      ),
+      latitude: "52° 56’ 14,352” N",
+      longitude: "005° 1’ 56,57” E",
+      place: "Buitenhaven",
+      stad: "Den Oever",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2165.jpg"}
+          alt="A douche at Buitenhaven Den Oever"
+        />
+      ),
+      latitude: "52° 56’ 14,352” N",
+      longitude: "005° 1’ 56,57” E",
+      place: "Buitenhaven",
+      stad: "Den Oever",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2164.jpg"}
+          alt="A douche at Waddenhaven Oudeschild, Texel"
+        />
+      ),
+      latitude: "53° 2’ 41,2” N",
+      longitude: "004° 51’ 25,77” E",
+      place: "Waddenhaven",
+      stad: "Oudeschild",
+      island: "Texel",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2161.jpg"}
+          alt="A douche at Waddenhaven Oudeschild, Texel"
+        />
+      ),
+      latitude: "53° 2’ 41,2” N",
+      longitude: "004° 51’ 25,77” E",
+      place: "Waddenhaven",
+      stad: "Oudeschild",
+      island: "Texel",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2533.jpg"}
+          alt="A douche at Bataviahaven Lelystad"
+        />
+      ),
+      latitude: "52° 31’ 9,192” N",
+      longitude: "005° 26’ 22,248” E",
+      place: "Bataviahaven",
+      stad: "Lelystad",
     },
   ];
 
@@ -51,7 +152,6 @@ export default function Home() {
   };
 
   const hash = window.location.hash.substring(1);
-  console.log(";;; " + hash);
   const mayBeIdx = parseInt(hash);
 
   const [idx, setIdx] = useState(
@@ -62,7 +162,6 @@ export default function Home() {
     let x = idx;
     while (x == idx) {
       x = randomItemIdx();
-      console.log(x);
     }
     return x;
   };
@@ -87,6 +186,7 @@ export default function Home() {
     <div>
       <div>
         <div id="place">{item.place}</div>
+        <div id="stad">{item.stad}</div>
         <div id="location">
           {item.latitude} {item.longitude}
         </div>
