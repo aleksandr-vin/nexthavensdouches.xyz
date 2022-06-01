@@ -145,6 +145,18 @@ export default function Home() {
       place: "Bataviahaven",
       stad: "Lelystad",
     },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2535.jpg"}
+          alt="A douche at Bataviahaven Lelystad"
+        />
+      ),
+      latitude: "52° 31’ 9,192” N",
+      longitude: "005° 26’ 22,248” E",
+      place: "Bataviahaven",
+      stad: "Lelystad",
+    },
   ];
 
   const randomItemIdx = () => {
