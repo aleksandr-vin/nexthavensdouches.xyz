@@ -1,0 +1,27 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  min-height: 100%;
+}
+
+.fade-enter {
+  opacity: 0.01;
+  transition: opacity 2000ms;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+  transition: opacity 2000ms;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+}
