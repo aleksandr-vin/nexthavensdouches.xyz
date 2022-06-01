@@ -50,31 +50,38 @@ export default function Home() {
     return Math.floor(items.length * Math.random());
   };
 
-  const [idx, setIdx] = useState(randomItemIdx());
+  const hash = window.location.hash.substring(1);
+  console.log(";;; " + hash);
+  const mayBeIdx = parseInt(hash);
+
+  const [idx, setIdx] = useState(
+    Number.isNaN(mayBeIdx) ? randomItemIdx() : mayBeIdx
+  );
 
   const calculateNextIdx = () => {
     let x = idx;
     while (x == idx) {
       x = randomItemIdx();
-      //const x = (idx + 1) % items.length;
       console.log(x);
     }
     return x;
   };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIdx(calculateNextIdx());
-    }, 6200);
-
-    return () => clearTimeout(timer);
-  });
 
   const moveNext = () => {
     setIdx(calculateNextIdx());
   };
 
   const item = items[idx];
+
+  useEffect(() => {
+    window.history.replaceState(null, "A douche at " + item.place, "/#" + idx);
+
+    const timer = setTimeout(() => {
+      setIdx(calculateNextIdx());
+    }, 6200);
+
+    return () => clearTimeout(timer);
+  });
 
   return (
     <div>
