@@ -10,25 +10,62 @@ export default function Home() {
     </CSSTransition>
   );
 
-  const [idx, setIdx] = useState(0);
-
-  const images = [
-    <StaticImage src={"../images/IMG_2465.jpg"} alt="A douche" />,
-    <StaticImage src={"../images/IMG_2467.jpg"} alt="A douche" />,
-    <StaticImage src={"../images/IMG_2132.jpg"} alt="A douche" />,
+  const items = [
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2465.jpg"}
+          alt="A douche at Compagnieshaven"
+        />
+      ),
+      latitude: "52° 42’ 11,022” N",
+      longitude: "005° 17’ 53,67” E",
+      place: "Compagnieshaven",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2467.jpg"}
+          alt="A douche at Compagnieshaven"
+        />
+      ),
+      latitude: "52° 42’ 11,022” N",
+      longitude: "005° 17’ 53,67” E",
+      place: "Compagnieshaven",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2132.jpg"}
+          alt="A douche at Haven Makkum"
+        />
+      ),
+      latitude: "53° 03’ 12,47” N",
+      longitude: "005° 24’ 11,19” E",
+      place: "Haven Makkum",
+    },
   ];
 
+  const randomItemIdx = () => {
+    return Math.floor(items.length * Math.random());
+  };
+
+  const [idx, setIdx] = useState(randomItemIdx());
+
   const calculateNextIdx = () => {
-    // const x = Math.floor(images.length * Math.random());
-    const x = (idx + 1) % images.length;
-    console.log(x);
+    let x = idx;
+    while (x == idx) {
+      x = randomItemIdx();
+      //const x = (idx + 1) % items.length;
+      console.log(x);
+    }
     return x;
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIdx(calculateNextIdx());
-    }, 5000);
+    }, 6200);
 
     return () => clearTimeout(timer);
   });
@@ -37,17 +74,28 @@ export default function Home() {
     setIdx(calculateNextIdx());
   };
 
-  const img = images[idx];
+  const item = items[idx];
 
   return (
     <div>
       <div>
-        #{idx}
-        <div onClick={() => moveNext()}>NEXT</div>
+        <div id="place">{item.place}</div>
+        <div id="location">
+          {item.latitude} {item.longitude}
+        </div>
+        <div id="next-button" onClick={() => moveNext()}>
+          NEXT
+        </div>
+        <div id="info" onClick={() => moveNext()}>
+          HAVENs' DOUCHES
+        </div>
+        <div id="author" onClick={() => moveNext()}>
+          Aleksandr Vinokurov
+        </div>
       </div>
       <div id="wrapper">
         <TransitionGroup className="carousel">
-          <Fade key={Math.random()}>{img}</Fade>
+          <Fade key={Math.random()}>{item.img}</Fade>
         </TransitionGroup>
       </div>
     </div>
