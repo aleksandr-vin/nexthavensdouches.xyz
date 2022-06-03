@@ -24,7 +24,7 @@
   "dependencies": {
     "gatsby": "^4.15.1",
     "gatsby-plugin-cname": "^1.0.0",
-    "gatsby-plugin-google-analytics": "^4.15.0",
+    "gatsby-plugin-google-gtag": "^4.15.0",
     "gatsby-plugin-image": "^2.15.1",
     "gatsby-plugin-sharp": "^4.15.1",
     "gatsby-plugin-typography": "^4.15.0",

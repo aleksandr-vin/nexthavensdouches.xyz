@@ -182,21 +182,33 @@ export default function Home() {
   };
 
   const moveNext = () => {
-    setIdx(calculateNextIdx());
+    const x = calculateNextIdx();
+    setIdx(x);
+    typeof window !== "undefined" &&
+      typeof window.gtag !== "undefined" &&
+      window.gtag("event", "clickNext", { idx: idx, nextIdx: x });
   };
 
   const item = items[idx];
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    typeof window !== "undefined" &&
       window.history.replaceState(
         null,
         "A douche at " + item.place,
         "/#" + idx
       );
-    }
+
+    typeof window !== "undefined" &&
+      typeof window.gtag !== "undefined" &&
+      window.gtag("event", "show", { idx: idx });
+
     const timer = setTimeout(() => {
-      setIdx(calculateNextIdx());
+      const x = calculateNextIdx();
+      setIdx(x);
+      typeof window !== "undefined" &&
+        typeof window.gtag !== "undefined" &&
+        window.gtag("event", "moveNext", { idx: idx, nextIdx: x });
     }, 6200);
 
     return () => clearTimeout(timer);
