@@ -1,11 +1,15 @@
 {
-  "name": "gatsby-starter-minimal-ts",
+  "name": "nexthavensdouches-site",
   "version": "1.0.0",
   "private": true,
-  "description": "A Gatsby starter written in TypeScript with no plugins and a single welcome page.",
-  "author": "Jude Agboola",
+  "description": "A Gatsby starter written in TypeScript made into static page site for nexthavensdouches.xyz",
+  "author": "Aleksandr Vinokurov",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "nexthavensdouches",
+    "havens",
+    "douches",
+    "photos"
   ],
   "scripts": {
     "develop": "gatsby develop",
