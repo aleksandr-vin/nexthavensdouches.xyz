@@ -178,12 +178,10 @@ export default function Home() {
   let mayBeIdx = NaN;
   if (typeof window !== "undefined") {
     const hash = window.location.hash.substring(1);
-    const mayBeIdx = parseInt(hash);
+    mayBeIdx = parseInt(hash);
   }
 
-  const [idx, setIdx] = useState(
-    Number.isNaN(mayBeIdx) ? randomItemIdx() : mayBeIdx
-  );
+  const [idx, setIdx] = useState(isNaN(mayBeIdx) ? randomItemIdx() : mayBeIdx);
 
   const calculateNextIdx = () => {
     let x = idx;
@@ -205,11 +203,7 @@ export default function Home() {
 
   useEffect(() => {
     typeof window !== "undefined" &&
-      window.history.replaceState(
-        null,
-        "A douche at " + item.place,
-        "/#" + idx
-      );
+      window.history.replaceState(null, "", "/#" + idx);
 
     typeof window !== "undefined" &&
       typeof window.gtag !== "undefined" &&
