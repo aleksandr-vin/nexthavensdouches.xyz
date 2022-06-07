@@ -62,6 +62,18 @@ export default function Home() {
     {
       img: (
         <StaticImage
+          src={"../images/285600891_427917692472901_6940828723852816607_n.jpg"}
+          alt="A douche with Champagne at Compagnieshaven Enkhuizen"
+        />
+      ),
+      latitude: "52° 42’ 11,022” N",
+      longitude: "005° 17’ 53,67” E",
+      place: "Compagnieshaven",
+      stad: "Enkhuizen",
+    },
+    {
+      img: (
+        <StaticImage
           src={"../images/IMG_2132.jpg"}
           alt="A douche at Vissershaven Makkum"
         />
