@@ -14,6 +14,30 @@ export default function Home() {
     {
       img: (
         <StaticImage
+          src={"../images/IMG_2950.jpg"}
+          alt="A douche at Amsterdam Marina"
+        />
+      ),
+      latitude: "52° 24’ 11,73” N",
+      longitude: "004° 53’ 10,128” E",
+      place: "Amsterdam Marina",
+      stad: "Amsterdam",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_2952.jpg"}
+          alt="A douche at Amsterdam Marina"
+        />
+      ),
+      latitude: "52° 24’ 11,73” N",
+      longitude: "004° 53’ 10,128” E",
+      place: "Amsterdam Marina",
+      stad: "Amsterdam",
+    },
+    {
+      img: (
+        <StaticImage
           src={"../images/IMG_2468.jpg"}
           alt="A douche at Compagnieshaven Enkhuizen"
         />
