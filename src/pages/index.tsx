@@ -231,6 +231,8 @@ export default function Home() {
 
   const [idx, setIdx] = useState(isNaN(mayBeIdx) ? randomItemIdx() : mayBeIdx);
 
+  const [pause, setPause] = useState(false);
+
   const calculateNextIdx = () => {
     let x = idx;
     while (x == idx) {
@@ -250,6 +252,8 @@ export default function Home() {
   const item = items[idx];
 
   useEffect(() => {
+    document.title = (pause ? "Paused at " : "At ") + item.place;
+
     typeof window !== "undefined" &&
       window.history.replaceState(null, "", "/#" + idx);
 
@@ -258,11 +262,15 @@ export default function Home() {
       window.gtag("event", "show", { idx: idx });
 
     const timer = setTimeout(() => {
-      const x = calculateNextIdx();
-      setIdx(x);
-      typeof window !== "undefined" &&
-        typeof window.gtag !== "undefined" &&
-        window.gtag("event", "moveNext", { idx: idx, nextIdx: x });
+      if (!pause) {
+        const x = calculateNextIdx();
+        setIdx(x);
+        typeof window !== "undefined" &&
+          typeof window.gtag !== "undefined" &&
+          window.gtag("event", "moveNext", { idx: idx, nextIdx: x });
+      } else {
+        console.debug("Paused at ", item);
+      }
     }, 6200);
 
     return () => clearTimeout(timer);
@@ -279,14 +287,12 @@ export default function Home() {
         <div id="next-button" onClick={() => moveNext()}>
           NEXT
         </div>
-        <div id="info" onClick={() => moveNext()}>
-          HAVENs' DOUCHES
-        </div>
+        <div id="info">HAVENs' DOUCHES</div>
         <div id="author" onClick={() => moveNext()}>
           Aleksandr Vinokurov
         </div>
       </div>
-      <div id="wrapper">
+      <div id="wrapper" onClick={() => setPause(!pause)}>
         <TransitionGroup className="carousel">
           <Fade key={Math.random()}>{item.img}</Fade>
         </TransitionGroup>
