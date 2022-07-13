@@ -14,7 +14,7 @@ export default function Home() {
     {
       img: (
         <StaticImage
-          src={"../images/IMG_2950.jpg"}
+          src={"../images/IMG_2952.jpg"}
           alt="A douche at Amsterdam Marina"
         />
       ),
@@ -26,8 +26,32 @@ export default function Home() {
     {
       img: (
         <StaticImage
-          src={"../images/IMG_2952.jpg"}
+          src={"../images/IMG_3280.jpg"}
           alt="A douche at Amsterdam Marina"
+        />
+      ),
+      latitude: "52° 24’ 11,73” N",
+      longitude: "004° 53’ 10,128” E",
+      place: "Amsterdam Marina",
+      stad: "Amsterdam",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_3281.jpg"}
+          alt="A douche at Amsterdam Marina"
+        />
+      ),
+      latitude: "52° 24’ 11,73” N",
+      longitude: "004° 53’ 10,128” E",
+      place: "Amsterdam Marina",
+      stad: "Amsterdam",
+    },
+    {
+      img: (
+        <StaticImage
+          src={"../images/IMG_3283.jpg"}
+          alt="A bath at Amsterdam Marina"
         />
       ),
       latitude: "52° 24’ 11,73” N",
